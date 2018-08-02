@@ -1,0 +1,15 @@
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration of users</title>
+    </head>
+    <body>
+        <div>
+            <p><strong>Welcome</strong></p>
+            <p><i>Hellow, men</i></p>
+            <div id="auth"></div>
+            {% render_bundle 'auth' %}
+        </div>
+    </body>
+</html>
