@@ -31,11 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 PROJECT_APPS = [
-    'users'
+    'users',
+    'data'
 ]
 
 THIRD_PARTY_APPS = [
-    'webpack_loader'
+    'webpack_loader',
+    'django_admin_generator'
 ]
 
 INSTALLED_APPS = [
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ] + PROJECT_APPS + THIRD_PARTY_APPS
@@ -117,6 +120,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -132,6 +139,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+SITE_ID = 1
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 

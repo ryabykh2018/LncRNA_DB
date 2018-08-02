@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import Calculator from './Components/Calculator/CalculatorV2/newCalculator';
+import App from './auth/App';
+
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import green from '@material-ui/core/colors/green'
+import orange from '@material-ui/core/colors/orange'
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: green[500]
+        },
+        secondary: {
+            main: orange[500]
+        }
+    },
+    typography: {
+        fontSize: 16,
+        htmlFontSize: 16
+    }
+})
 
 ReactDOM.render(
-    <div>
-        <h1>HELLO YA AUTH</h1>
+    <MuiThemeProvider theme={theme}>
         <App />
-        <Calculator />
-    </div>
+    </MuiThemeProvider>
 , document.getElementById('auth'));
